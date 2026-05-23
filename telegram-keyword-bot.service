@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Keyword Alert Bot
+After=network.target
+
+[Service]
+Type=simple
+User=telegrambot
+WorkingDirectory=/opt/telegram-keyword-bot
+EnvironmentFile=/opt/telegram-keyword-bot/.env
+ExecStart=/opt/telegram-keyword-bot/.venv/bin/python bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
